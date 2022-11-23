@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DEFAULT_IMAGE="quay.io/cloudnativetoolkit/cli-tools:v1.2-v2.4.1"
-DEFAULT_DOCKER_CMD="/usr/bin/docker"
+DEFAULT_DOCKER_CMD="docker"
 
 displayUsage() {
   echo "Launches and attaches to a docker container for testing a supplied module sub-directory."
