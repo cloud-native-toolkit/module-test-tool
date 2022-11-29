@@ -82,17 +82,6 @@ else
   exit 1
 fi
 
-# Below for debug purposes
-# echo <<EOF "
-#   DOCKER_CMD     = $DOCKER_CMD
-#   CONTAINER_NAME = $CONTAINER_NAME
-#   CRED_FILE      = $CRED_FILE
-#   TFVAR_FILE     = $TFVAR_FILE
-#   DOCKER_IMAGE   = $DOCKER_IMAGE
-#   ENV_VARS       = $ENV_VARS
-# "
-# EOF
-
 echo "Initializing container ${CONTAINER_NAME} from ${DOCKER_IMAGE}"
 ${DOCKER_CMD} run -itd --name ${CONTAINER_NAME} \
    --device /dev/net/tun --cap-add=NET_ADMIN \
@@ -102,7 +91,7 @@ ${DOCKER_CMD} run -itd --name ${CONTAINER_NAME} \
    ${DOCKER_IMAGE} 
 
 echo "Copying ${TFVAR_FILE} to container"
-${DOCKER_CMD} cp ${TFVAR_FILE} ${CONTAINER_NAME}:/terraform
+${DOCKER_CMD} cp ${TFVAR_FILE} ${CONTAINER_NAME}:/terraform/terraform.tfvars
 
 echo "Copying module setup script to container"
 ${DOCKER_CMD} cp ./setup.sh ${CONTAINER_NAME}:/terraform
