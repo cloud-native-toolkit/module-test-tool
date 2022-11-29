@@ -13,7 +13,7 @@ The tool has been tested on Linux servers and desktops.
 
 1. Download the tfvar file required for the module (refer to the `.github/workflows/verify*.yaml` for the tfvar file used in the module automated test), or create as needed. You can also find tfvar files used for testing in the `cloud-native/toolkit/action-module-verify` repository [here](https://github.com/cloud-native-toolkit/action-module-verify/tree/main/env)
 
-2. Create a `credentials.properties` file with the required secrets for testing. Several example templates are included in this repository.
+2. Create a `credentials.properties` file with the required secrets for testing. Several example templates are included in this repository. Use the `local/` directory under this repoistory to exclude these files git
 
 3. Clone the module to be tested to a local directory
 
